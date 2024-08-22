@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Botões 3 Cores</title>
+
+
+        <script>
+
+            function somar() {
+                const v1 = document.getElementById('v1').value
+                const v2 = document.getElementById('v2').value
+                const resultado = document.getElementById('resultado')
+                const r = parseFloat(v1) + parseFloat(v2)
+                resultado.value = r
+            }
+
+
+            function mostrar(botao) {
+
+                const h1 = document.getElementsByTagName('h1')[0]
+                const cor = botao.id
+                h1.innerText = botao.innerText
+                h1.style.color = cor
+                botao.style.color = cor
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1 id="titulo">Hello World</h1>
+        <button id="red" onclick="mostrar(this)">Vermelho</button>
+        <button id="blue" onclick="mostrar(this)">Azul</button>
+        <button id="green" onclick="mostrar(this)">Verde</button>
+
+        <br>
+        <label for="v1">Valor 1</label>
+        <input id="v1" type="number">
+        
+        <br>
+        <label for="v2">Valor 2</label>
+        <input id="v2" type="number">
+
+        <button onclick="somar()">Somar</button>
+        <br>
+        <label>Resultado:</label>
+        <input id="resultado" type="number" readonly>
+
+    </body>
+
+</html>

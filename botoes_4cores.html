@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Botões 4 Cores</title>
+
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                const h1 = document.getElementsByTagName('h1')[0]
+                const botoes = document.getElementsByTagName('button')
+
+                // percorre a coleção de botoes usando: for of
+                for (const btn of botoes) {
+                    console.log(btn)
+                
+                    const botao = document.querySelector('#red')
+                    btn.onclick = () => {  // => é a mesma coisa que function()
+                        const cor = btn.id
+                        h1.innerText = btn.innerText
+                        h1.style.color = cor
+                        btn.style.color = cor
+                    }
+                }    
+
+            })
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1 id="titulo">Hello World</h1>
+        <button id="red">Vermelho</button>
+        <button id="blue">Azul</button>
+        <button id="green">Verde</button>
+        <button id="orange">Laranja</button>
+
+    </body>
+
+</html>
